@@ -1,0 +1,20 @@
+type,name,id,expectedOutcome
+student,John Doe,1,success
+student,,1,failure
+student,John Doe,-1,failure
+teacher,, -1,failure
+teacher,A,2,success
+teacher,Robert,2147483647,success
+student,Amy O'Neil,3,success
+student,InvalidName!,4,failure
+teacher,NullNameTest,null,failure
+student,LongNameTest,100,success
+student,ShortName,1,success
+teacher,T,100,success
+student,DuplicateName,1,failure
+student,Alice,1,success
+student,,1,error
+student,Bob,-1,error
+teacher,Mr. Smith,101,success
+teacher,,101,error
+teacher,Ms. Johnson,-101,error
