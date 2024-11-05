@@ -109,7 +109,7 @@ class SchoolDataDrivenTest {
 	@MethodSource("getAdditionalCSVDataForEdgeCases")
 	void testAddPersonEdgeCases(String type, String name, int id, String expectedOutcome) {
 		if ("student".equals(type)) {
-			if ("success".equals(expectedOutcome)) {
+			if ("success".equals(expectedOutcom)) {
 				school.addStudent1(name, id);
 				assertEquals(1, school.getStudents().size(), "Student should be added successfully.");
 			} else {
