@@ -88,8 +88,40 @@ class SchoolTest {
 		assertTrue(output.contains("Student ID: 1, Name: Alice"));
 		assertTrue(output.contains("Student ID: 2, Name: Bob"));
 	}
+	
+	@Tag("student")
+	@Test
+	@Order(7)
+	void testAddStudentConsoleOutput() {
+		school.addStudent("Alice", 1);
 
-
+		// Verify console output
+		assertTrue(outputStream.toString().contains("Student added: Alice"));
+	}
+	
+	@Tag("student")
+	@Test
+	@Order(8)
+	void testAddStudentWithSpecialCharactersInName() {
+		school.addStudent1("Alice@123", 3);
+		assertEquals("Alice@123", school.getStudents().get(0).getName(), "Special characters in name should be accepted.");
+	}
+	
+	@Tag("student")
+	@Test
+	@Order(9)
+	void testDisplayStudentsWithEmptyList() {
+	    school.displayStudents();
+	    assertEquals("Students List:\n", outputStream.toString().trim(), "Output should indicate no students are added.");
+	}
+	
+	@Tag("student")
+	@Test
+	@Order(10)
+	void testAddStudentWithMaxIntegerID() {
+	    school.addStudent1("MaxIDStudent", Integer.MAX_VALUE);
+	    assertEquals(Integer.MAX_VALUE, school.getStudents().get(0).getId(), "Student ID should accept max integer value.");
+	}
 	
 	// Group 2: Teacher Tests
 	@Tag("teacher")
@@ -167,7 +199,29 @@ class SchoolTest {
 		assertTrue(outputStream.toString().contains("Teacher added: Mr. Smith"));
 	}
 	
-
-
+	@Tag("teacher")
+	@Test
+	@Order(8)
+	void testAddTeacherWithLongName() {
+	    String longName = "Mr. Jonathan Christopher Smith the Third Esq.";
+	    school.addTeacher1(longName, 103);
+	    assertEquals(longName, school.getTeachers().get(0).getName(), "Long names should be accepted.");
+	}
+	
+	@Tag("teacher")
+	@Test
+	@Order(9)
+	void testDisplayTeachersWithEmptyList() {
+	    school.displayTeachers();
+	    assertEquals("Teachers List:\n", outputStream.toString().trim(), "Output should indicate no teachers are added.");
+	}
+	
+	@Tag("teacher")
+	@Test
+	@Order(10)
+	void testAddTeacherWithMaxIntegerID() {
+	    school.addTeacher1("MaxIDTeacher", Integer.MAX_VALUE);
+	    assertEquals(Integer.MAX_VALUE, school.getTeachers().get(0).getId(), "Teacher ID should accept max integer value.");
+	}
 }
 
