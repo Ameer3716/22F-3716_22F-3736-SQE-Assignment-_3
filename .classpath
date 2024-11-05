@@ -7,8 +7,8 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="C:/Users/pc/Downloads/New folder (3)/commons-io-2.17.0/commons-io-2.17.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/pc/Downloads/commons-csv-1.12.0/commons-csv-1.12.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/pc/Downloads/commons-codec-1.17.1.jar"/>
+	<classpathentry kind="lib" path="D:/setups exe/commons-codec-1.17.1.jar"/>
+	<classpathentry kind="lib" path="D:/setups exe/commons-csv-1.12.0.jar"/>
+	<classpathentry kind="lib" path="D:/setups exe/commons-io-2.17.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
